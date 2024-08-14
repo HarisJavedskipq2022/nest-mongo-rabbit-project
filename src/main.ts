@@ -28,9 +28,9 @@ async function bootstrap() {
 
     app.useGlobalFilters(new HttpExceptionFilter());
 
-    const port = process.env.PORT || 9000;
+    const port = process.env.PORT || 3000;
     await app.listen(port);
-    Logger.log(`Application is running on: ${await app.getUrl()}`);
+    Logger.log(`Server is running on: http://localhost:${port}`);
   } catch (error) {
     Logger.error('An error occurred during bootstrap:', error);
     process.exit(1);
